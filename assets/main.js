@@ -5,10 +5,11 @@
   // Where reservation requests go.
   // SHEET_URL: the Google Apps Script web-app URL (see apps-script/README.md). Each request is
   //   saved as a row in the Google Sheet and emailed to you. Paste the URL between the quotes.
-  // CMS_URL: the old Strapi CMS (view requests at CMS_URL + "/admin"). Set to "" to stop using it.
-  // Both are used at the same time. The guest sees "sent" if at least one of them saves the request.
+  // CMS_URL: the old Strapi CMS. Turned off. To use it again, put its address back here
+  //   ("https://house-of-amrut-cms.onrender.com") AND add that address to connect-src in vercel.json.
+  // If both are set, both are used and the guest sees "sent" if at least one of them saves the request.
   var SHEET_URL = "";
-  var CMS_URL = "https://house-of-amrut-cms.onrender.com";
+  var CMS_URL = "";
 
   // Opening hours used to build the date and time pickers.
   var CLOSED_DAYS = [0, 1, 2, 3];  // 0 = Sunday … 6 = Saturday. Open Thursday to Saturday.

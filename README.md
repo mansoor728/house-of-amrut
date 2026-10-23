@@ -11,7 +11,7 @@ Plain HTML, CSS and JavaScript. No framework, no build step.
 
 ## Security headers
 `vercel.json` sends a Content-Security-Policy that only allows the outside services the site uses:
-Google Fonts, Cloudinary (images, video, menu PDF), the Google Maps embed, the Apps Script URL and the CMS.
+Google Fonts, Cloudinary (images, video, menu PDF), the Google Maps embed and the Apps Script URL.
 If you add a new outside service (an analytics script, a booking widget, images from another host),
 add its domain to the matching part of that policy, or the browser will block it.
 The one inline `<script>` in each page's `<head>` is allowed by its hash; if you change that line,
@@ -38,12 +38,11 @@ Timings are in `assets/main.js` (Home hero section) and on the two lines in `ind
 a slow fade to black after the video ends, and a fade back up into the first frame.
 
 ## Reservations
-Each request goes to two places at once:
-- **Google Sheet + email.** Setup (about 5 minutes, once) is in `apps-script/README.md`.
-  Paste the web-app URL into `SHEET_URL` at the top of `assets/main.js`.
-- **The old Strapi CMS** at `https://house-of-amrut-cms.onrender.com/admin` (Content Manager → Reservation).
-  To stop using it, set `CMS_URL` to `""` in `assets/main.js`.
+Each request is saved as a row in a Google Sheet and emailed to you.
+Setup (about 5 minutes, once) is in `apps-script/README.md`; the web-app URL goes into
+`SHEET_URL` at the top of `assets/main.js`.
 
-The guest sees "Request sent" if at least one of the two saved it.
+The old Strapi CMS is turned off (`CMS_URL` is empty). The comment next to `CMS_URL`
+in `main.js` says how to turn it back on.
 
 Opening days and seating times for the date and time pickers are set at the top of `main.js`.
