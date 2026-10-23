@@ -1,0 +1,5 @@
+# Vercel CLI link (project IDs)
+.vercel
+# OS clutter
+.DS_Store
+Thumbs.db

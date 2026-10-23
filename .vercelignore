@@ -1,0 +1,7 @@
+# Not part of the website. Keeps setup notes, the Apps Script source
+# (which holds the notification email) and the CMS admin URL off the public site.
+apps-script
+README.md
+.vercelignore
+.git
+.claude
